@@ -1,0 +1,23 @@
+.header-text {
+  display: inline-flex;
+  align-items: baseline;
+  margin: 0;
+  font-weight: 400;
+  line-height: 0.95;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.50);
+}
+
+.header-text-capital {
+  font-family: "sloop-script-pro", cursive;
+  font-size: clamp(5rem, 13vw, 10rem);
+  font-weight: 400;
+  text-transform: none;
+  line-height: 0.8;
+}
+
+.header-text-rest {
+  font-family: "the-seasons", Georgia, serif;
+  font-size: clamp(1.5rem, 4.5vw, 3.7rem);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}

@@ -1,0 +1,66 @@
+/* --------------------------------------------------------------------------------------------------------- */
+/* COLORS */
+
+:root {
+  /* Background colors */
+  --background-default: #EFEEEA;
+  --background-primary: #701C21;
+
+  /* Base color palette */
+  --color-burgundy: #701C21;
+
+  /* Text color palette */
+  --text-default: #321e1f;
+  --text-primary: #701C21;
+  --text-on-primary: #EFEEEA;
+
+  /* Border */
+  --border-default: #321e1f;
+  --border-burgundy: #701C21;
+  --border-white: #EFEEEA;
+  --border-gold: #BF9885;
+
+  /* Shadows */
+ 
+}
+
+
+
+/* --------------------------------------------------------------------------------------------------------- */
+/* GLOBAL STYLES */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--background-default);
+  color: var(--text-default);
+  font-family: "the-seasons", Georgia, serif;
+  overflow-x: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.page-shell {
+  width: 100%;
+}
