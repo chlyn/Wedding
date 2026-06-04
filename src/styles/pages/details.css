@@ -31,6 +31,9 @@
   line-height: 1.05;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+#dress-code-title {
   white-space: nowrap;
 }
 
@@ -210,6 +213,8 @@
 
 .details-travel-title {
   color: var(--text-on-primary);
+  white-space: normal;
+  overflow-wrap: normal;
 }
 
 .details-travel-intro {
@@ -356,5 +361,13 @@
   .details-section-title {
     font-size: clamp(1.8rem, 9vw, 2.8rem);
     letter-spacing: 0.04em;
+  }
+
+  #dress-code-title {
+    white-space: nowrap;
+  }
+
+  .details-travel-title {
+    white-space: normal;
   }
 }

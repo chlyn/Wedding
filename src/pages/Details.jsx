@@ -75,7 +75,7 @@ function Details() {
                                 Baltimore/Washington International Airport
                             </p>
 
-                            <p className="details-travel-subtitle">Closests Airport</p>
+                            <p className="details-travel-subtitle">Closest Airport</p>
 
                             <p>
                                 The closest airport to Bowie, approximately 30 minutes away.
