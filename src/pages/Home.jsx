@@ -2,26 +2,32 @@ import { useState } from "react";
 import "../styles/pages/home.css";
 import dateLocationImage from "../assets/home-date-location.png";
 import heroImage from "../assets/home-hero.png";
+import ceremonyImage from "../assets/Ceremony.png";
+import cocktailImage from "../assets/Cocktail.png";
+import receptionImage from "../assets/Reception.png";
 import HeaderText from "../components/HeaderText";
 import HeaderPlainText from "../components/HeaderPlainText";
 
 const scheduleItems = [
     {
-        time: "1:00 PM-2:30 PM",
+        image: ceremonyImage,
+        time: "1:00 PM — 2:30 PM",
         activity: "Ceremony",
         place: "St. Edward the Confessor Catholic Church",
         address: "1940 Mitchellville Road, Bowie, MD 20716",
         mapUrl: "https://www.google.com/maps/place/St+Edward+the+Confessor+Catholic+Church,+Inc/data=!4m7!3m6!1s0x89b7ec99d35a1369:0x5f138933f7be582a!8m2!3d38.9147689!4d-76.7231723!16s%2Fg%2F11cmmyxf_z!19sChIJaRNa05nst4kRKli-9zOJE18?authuser=0&hl=en&rclk=1",
     },
     {
-        time: "4:30 PM-5:30 PM",
+        image: cocktailImage,
+        time: "4:30 PM — 5:30 PM",
         activity: "Cocktail Hour",
         place: "Celebrations Event & Rental Venue",
         address: "4831 Tesla Drive Unit # K, Bowie, MD 20715",
         mapUrl: "https://www.google.com/maps/place/Celebrations+Event+%26+Rental+Venue/@38.9565666,-76.7172814,17z/data=!3m1!4b1!4m6!3m5!1s0x89b7edb4fe32a027:0x870f9094c3f6271!8m2!3d38.9565625!4d-76.7124105!16s%2Fg%2F11k9fwcxnr?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D",
     },
     {
-        time: "5:30 PM-10:00 PM",
+        image: receptionImage,
+        time: "5:30 PM — 10:00 PM",
         activity: "Reception",
         place: "Celebrations Event & Rental Venue",
         address: "4831 Tesla Drive Unit # K, Bowie, MD 20715",
@@ -95,17 +101,21 @@ function Home() {
                     <div className="home-schedule-list">
                         {scheduleItems.map((item) => (
                             <article className="home-schedule-item" key={`${item.time}-${item.activity}`}>
-                                <div className="home-schedule-time">
-                                    <time>{item.time}</time>
-                                </div>
+                                <img
+                                    className="home-schedule-image"
+                                    src={item.image}
+                                    alt={`${item.activity} location`}
+                                />
+
                                 <div className="home-schedule-info">
                                     <h3>{item.activity}</h3>
+                                    <time>{item.time}</time>
                                     <p>{item.place}</p>
                                     <a href={item.mapUrl} target="_blank" rel="noreferrer">
                                         {item.address}
                                     </a>
                                     <a className="home-map-button" href={item.mapUrl} target="_blank" rel="noreferrer">
-                                        View Map
+                                        Directions
                                     </a>
                                 </div>
                             </article>
@@ -119,7 +129,7 @@ function Home() {
                 <p className="home-rsvp-copy">
                     Your love, prayers, and presence mean so much to us. We cannot wait to gather with the people we love most and celebrate the beginning of our forever.
                 </p>
-                <p className="home-rsvp-deadline">Kindly reply by August 4, 2026.</p>
+                <p className="home-rsvp-deadline">Please respond before August 4, 2026.</p>
                 <button type="button">Celebrate With Us</button>
             </section>
 

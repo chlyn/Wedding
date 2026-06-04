@@ -64,12 +64,20 @@
 
 /* Button Interaction */
 .navbar-button:hover,
-.navbar-button:focus-visible {
-  border-bottom-color: var(--text-default);
+.navbar-button:focus-visible,
+.navbar-button.active {
+  border-bottom-color: var(--text-on-primary);
+  color: var(--text-on-primary);
+}
+
+.navbar.scrolled .navbar-button:hover,
+.navbar.scrolled .navbar-button:focus-visible,
+.navbar.scrolled .navbar-button.active {
+  border-bottom-color: var(--text-primary);
+  color: var(--text-primary);
 }
 
 .navbar-button.active {
-  border-bottom-color: var(--text-default);
   font-weight: 700;
 }
 

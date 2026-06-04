@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Details from "./pages/Details";
 import Home from "./pages/Home";
 import Registry from "./pages/Registry";
@@ -19,6 +19,10 @@ const pages = {
 function App() {
   const [activePage, setActivePage] = useState("home");
   const ActivePage = pages[activePage];
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [activePage]);
 
   return (
     <div className="app-shell">

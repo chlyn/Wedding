@@ -245,78 +245,66 @@
 
 .home-schedule-list {
   display: grid;
-  gap: 0;
-  width: fit-content;
-  max-width: 100%;
+  grid-template-columns: 1fr;
+  gap: clamp(72px, 10vw, 120px);
+  width: min(100%, 520px);
   margin: clamp(56px, 8vw, 88px) auto 0;
-  text-align: left;
+  text-align: center;
 }
 
 .home-schedule-item {
   display: grid;
-  grid-template-columns: max-content max-content;
-  gap: clamp(24px, 5vw, 56px);
-  position: relative;
-  padding: 0 0 16px;
-}
-
-.home-schedule-item:last-child {
-  padding-bottom: clamp(24px, 4vw, 40px);
-}
-
-.home-schedule-time {
-  display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
   justify-items: center;
-  align-content: stretch;
-  gap: 16px;
-  padding-top: 5px;
+  text-align: center;
+  padding: 0;
 }
 
-.home-schedule-time::after {
-  content: "";
-  width: 2px;
-  height: 100%;
-  min-height: 120px;
-  margin-bottom: 16px;
-  background: var(--border-white);
-  opacity: 0.8;
+.home-schedule-image {
+  width: min(100%, 280px);
+  aspect-ratio: 1 / 1;
+  display: block;
+  object-fit: cover;
+  margin: 0 auto 30px;
 }
 
-.home-schedule-time time {
+.home-schedule-info {
+  width: min(100%, 420px);
+  display: grid;
+  justify-items: center;
+  color: var(--text-on-primary);
+}
+
+.home-schedule-info h3 {
+  margin: 0 0 12px;
+  font-family: "baskerville-display-pt", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.home-schedule-info time {
+  display: block;
+  margin: 0 0 24px;
   color: var(--text-on-primary);
   font-family: "baskerville-display-pt", Georgia, serif;
-  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  font-size: clamp(1.05rem, 2.4vw, 1.45rem);
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0.08em;
   line-height: 1.35;
   text-align: center;
   text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.home-schedule-info {
-  width: fit-content;
-  max-width: 420px;
-  color: var(--text-on-primary);
-}
-
-.home-schedule-info h3 {
-  margin: 0 0 16px;
-  font-family: "baskerville-display-pt", Georgia, serif;
-  font-size: clamp(1.6rem, 4vw, 2.7rem);
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.1;
 }
 
 .home-schedule-info p {
-  margin: 0;
+  margin: 0 0 4px;
   font-family: Arial, sans-serif;
-  font-size: clamp(0.75rem, 1.35vw, 0.88rem);
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
   letter-spacing: 0.06em;
-  line-height: 1.35;
+  line-height: 1.45;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -326,10 +314,11 @@
 
 .home-schedule-info > a:not(.home-map-button) {
   display: inline-block;
-  margin-top: 2px;
+  margin-top: 0;
   font-family: Arial, sans-serif;
-  font-size: clamp(0.74rem, 1.3vw, 0.86rem);
-  line-height: 1.35;
+  font-size: clamp(0.88rem, 1.7vw, 1.05rem);
+  line-height: 1.45;
+  text-align: center;
   text-underline-offset: 4px;
 }
 
@@ -337,7 +326,6 @@
   width: fit-content;
   display: block;
   margin-top: 34px;
-  margin-bottom: 68px;
   border: 1px solid var(--border-white);
   font-family: Arial, sans-serif;
   font-size: 0.82rem;
@@ -533,42 +521,22 @@
   }
 
   .home-schedule-list {
-    width: 100%;
-    max-width: 520px;
+    width: min(100%, 360px);
+    gap: 100px;
   }
 
-  .home-schedule-item {
-    grid-template-columns: minmax(92px, 120px) minmax(0, 1fr);
-    gap: 18px;
-    text-align: left;
-  }
-
-  .home-schedule-time {
-    padding-top: 0;
-  }
-
-  .home-schedule-time time {
-    white-space: normal;
-    overflow-wrap: normal;
-    font-size: clamp(0.85rem, 3.6vw, 1rem);
-  }
-
-  .home-schedule-time::after {
-    min-height: 96px;
+  .home-schedule-image {
+    width: min(100%, 200px);
+    margin-bottom: 28px;
   }
 
   .home-schedule-info {
-    width: auto;
-    max-width: 100%;
+    width: 100%;
   }
 
   .home-schedule-info p,
   .home-schedule-info > a:not(.home-map-button) {
     overflow-wrap: anywhere;
-  }
-
-  .home-schedule-info {
-    display: block;
   }
 
   .home-gallery {
