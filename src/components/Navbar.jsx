@@ -4,9 +4,7 @@ import "../styles/components/navbar.css";
 const navItems = [
     { id: "home", label: "Home" },
     { id: "details", label: "Details" },
-    { id: "schedule", label: "Schedule" },
     { id: "registry", label: "Registry" },
-    { id: "travel", label: "Travel" },
     { id: "thingsToDo", label: "Things To Do" },
 ];
 
