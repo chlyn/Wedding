@@ -16,8 +16,8 @@
   inset: 0;
   background:
     linear-gradient(
-      color-mix(in srgb, var(--background-primary) 48%, transparent),
-      color-mix(in srgb, var(--background-primary) 58%, transparent)
+      color-mix(in srgb, var(--background-primary) 76%, transparent),
+      color-mix(in srgb, var(--background-primary) 84%, transparent)
     ),
     radial-gradient(
       circle,

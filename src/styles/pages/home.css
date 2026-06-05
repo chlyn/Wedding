@@ -108,14 +108,15 @@
 }
 
 .home-date-decor-top {
-  top: -95px;
-  left: -78px;
+  top: -90px;
+  left: -90px;
+  transform: rotate(-90deg);
 }
 
 .home-date-decor-bottom {
-  right: -78px;
-  bottom: -95px;
-  transform: rotate(180deg);
+  right: -90px;
+  bottom: -90px;
+  transform: rotate(90deg);
 }
 
 .home-date-image {

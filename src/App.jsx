@@ -17,6 +17,26 @@ const routes = {
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 
+const revealSelectors = [
+  ".home-hero-overlay",
+  ".page-hero-title",
+  ".home-date-visual",
+  ".home-date-copy",
+  ".home-schedule-frame",
+  ".home-gallery-track",
+  ".details-dress-info",
+  ".details-attire-image",
+  ".details-travel-title",
+  ".details-travel-intro",
+  ".details-travel-card",
+  ".details-registry-frame",
+  ".thingstodo-intro",
+  ".thingstodo-destination",
+  ".faq-intro",
+  ".faq-item",
+  ".contact-banner-copy",
+];
+
 function getRouteFromLocation() {
   const redirectedRoute = new URLSearchParams(window.location.search).get("route");
 
@@ -75,6 +95,42 @@ function App() {
 
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [currentRoute, isMobileLayout, navigationRequest, routeConfig.sectionId, routeConfig.smoothScroll]);
+
+  useEffect(() => {
+    const revealElements = [...document.querySelectorAll(revealSelectors.join(","))];
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    document.documentElement.classList.add("reveal-ready");
+
+    revealElements.forEach((element, index) => {
+      element.dataset.reveal = "up";
+      element.style.setProperty("--reveal-delay", `${(index % 4) * 80}ms`);
+    });
+
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      revealElements.forEach((element) => element.classList.add("is-visible"));
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -6% 0px",
+      }
+    );
+
+    revealElements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, [currentRoute, isMobileLayout]);
 
   return (
     <div className="app-shell">
