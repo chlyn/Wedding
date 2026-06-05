@@ -177,8 +177,9 @@
     text-align: center;
   }
 
-  .faq-intro > span {
-    margin-inline: auto;
+  .faq-intro > span,
+  .faq-contact-note {
+    display: none;
   }
 
   .faq-item > p {

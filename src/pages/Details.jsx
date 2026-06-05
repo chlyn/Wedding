@@ -14,10 +14,10 @@ const dressCodeColors = [
 ];
 
 const registryLinks = [
-    { name: "Zola", url: "https://www.zola.com/registry/richmondandcherrie" },
+    { name: "Zelle", url: "https://richmondandcherrie.my.canva.site/registry" },
     { name: "Amazon", url: "https://www.amazon.com/wedding/share/richmondandcherrie" },
     { name: "Venmo", url: "https://venmo.com/ccespineda" },
-    { name: "Zelle", url: "https://richmondandcherrie.my.canva.site/registry" },
+    { name: "Zola", url: "https://www.zola.com/registry/richmondandcherrie" },
 ];
 
 function Details() {

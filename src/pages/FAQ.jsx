@@ -21,11 +21,11 @@ function FAQ({ showContact = false, onNavigate }) {
     const faqItems = [
         {
             question: "Can I bring a guest?",
-            answer: "Due to limited seating, this invitation is extended only to the guest(s) namedon the invitation.",
+            answer: "Due to limited seating, this invitation is extended only to the guest(s) named on the invitation.",
         },
         {
             question: "When should I RSVP?",
-            answer: "Please submit your RSVP by July 5, 2026.",
+            answer: "Please submit your RSVP by Sunday, July 5, 2026.",
         },
         {
             question: "What is the wedding attire?",
@@ -62,7 +62,7 @@ function FAQ({ showContact = false, onNavigate }) {
                     </p>
                     <span aria-hidden="true"></span>
                     <p className="faq-contact-note">
-                        Still have a question? We are always happy to <FAQLink route="/home/contact-us" onNavigate={onNavigate}>help</FAQLink>.
+                        Still have a question? <FAQLink route="/home/contact-us" onNavigate={onNavigate}>Contact us</FAQLink>.
                     </p>
                 </div>
 
