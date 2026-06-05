@@ -37,12 +37,11 @@ function Details() {
                         ))}
                     </div>
 
-                    <div className="details-attire-note">
-                        <p className="details-attire-heading">Please Note</p>
-                        <p>
+                    <div className="details-dress-note">
+                        <p className="details-dress-copy">
                             Gentlemen are welcome to incorporate these colors through a tie, bow tie, pocket square, or other accent, though it is not required.
                         </p>
-                        <p>
+                        <p className="details-dress-copy">
                             We respectfully ask that guests avoid wearing white, ivory, shorts, or short dresses.
                         </p>
                     </div>
