@@ -1,6 +1,6 @@
-# Wedding
+# richmondandcherrie
 
-React + Vite starter for the Wedding project.
+Wedding website for Richmond and Cherrie.
 
 ## GitHub Pages
 
@@ -9,13 +9,10 @@ This site deploys from `main` with GitHub Actions.
 Free project URL:
 
 ```txt
-https://chlyn.github.io/Wedding/
+https://chlyn.github.io/richmondandcherrie/
 ```
 
-To use a `richmondandcherrie` address, use one of these options:
-
-- Rename this repository to `richmondandcherrie` for `https://chlyn.github.io/richmondandcherrie/`.
-- Buy and connect a full custom domain, such as `richmondandcherrie.com`.
+The repository is configured to publish at the URL above.
 
 ## Development
 
