@@ -5,12 +5,12 @@ import ThingsToDo from "./pages/ThingsToDo";
 import Navbar from "./components/Navbar";
 
 const routes = {
-  "/home": { page: Home, activePage: "home" },
-  "/home/schedule": { page: Home, activePage: "schedule", sectionId: "home-schedule" },
-  "/home/contact-us": { page: Home, activePage: "contact", sectionId: "home-contact" },
-  "/details": { page: Details, activePage: "details" },
-  "/details/registry": { page: Details, activePage: "registry", sectionId: "details-registry" },
-  "/things-to-do": { page: ThingsToDo, activePage: "thingsToDo" },
+  "/home": { page: Home, activePage: "home", sectionId: "home-page-start" },
+  "/home/schedule": { page: Home, activePage: "schedule", sectionId: "home-schedule", smoothScroll: true },
+  "/home/contact-us": { page: Home, activePage: "contact", sectionId: "home-contact", smoothScroll: true },
+  "/details": { page: Details, activePage: "details", sectionId: "details-page-start" },
+  "/details/registry": { page: Details, activePage: "registry", sectionId: "details-registry", smoothScroll: true },
+  "/things-to-do": { page: ThingsToDo, activePage: "thingsToDo", sectionId: "things-to-do-page" },
 };
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -30,12 +30,15 @@ function getRouteFromLocation() {
 
 function App() {
   const [currentRoute, setCurrentRoute] = useState(getRouteFromLocation);
+  const [isMobileLayout, setIsMobileLayout] = useState(() => window.matchMedia("(max-width: 768px)").matches);
+  const [navigationRequest, setNavigationRequest] = useState(0);
   const routeConfig = routes[currentRoute] || routes["/home"];
   const ActivePage = routeConfig.page;
 
   const navigate = (route) => {
     window.history.pushState({}, "", `${basePath}${route}`);
     setCurrentRoute(route);
+    setNavigationRequest((request) => request + 1);
   };
 
   useEffect(() => {
@@ -50,22 +53,41 @@ function App() {
   }, []);
 
   useEffect(() => {
+    const mobileLayoutQuery = window.matchMedia("(max-width: 768px)");
+    const handleLayoutChange = (event) => setIsMobileLayout(event.matches);
+
+    mobileLayoutQuery.addEventListener("change", handleLayoutChange);
+
+    return () => mobileLayoutQuery.removeEventListener("change", handleLayoutChange);
+  }, []);
+
+  useEffect(() => {
     if (routeConfig.sectionId) {
       requestAnimationFrame(() => {
-        document.getElementById(routeConfig.sectionId)?.scrollIntoView({ behavior: "smooth" });
+        document.getElementById(routeConfig.sectionId)?.scrollIntoView({
+          behavior: isMobileLayout || routeConfig.smoothScroll ? "smooth" : "auto",
+        });
       });
       return;
     }
 
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, [currentRoute, routeConfig.sectionId]);
+  }, [currentRoute, isMobileLayout, navigationRequest, routeConfig.sectionId, routeConfig.smoothScroll]);
 
   return (
     <div className="app-shell">
       <Navbar activePage={routeConfig.activePage} onNavigate={navigate} />
-      <main className="page-shell">
-        <ActivePage />
-      </main>
+      <div className="page-shell">
+        {isMobileLayout ? (
+          <div className="mobile-page-flow">
+            <Home showContact={false} />
+            <Details />
+            <ThingsToDo showContact />
+          </div>
+        ) : (
+          <ActivePage />
+        )}
+      </div>
     </div>
   );
 }

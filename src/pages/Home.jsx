@@ -7,6 +7,7 @@ import cocktailImage from "../assets/Cocktail.png";
 import receptionImage from "../assets/Reception.png";
 import HeaderText from "../components/HeaderText";
 import HeaderPlainText from "../components/HeaderPlainText";
+import Contact from "../components/Contact";
 
 const scheduleItems = [
     {
@@ -41,7 +42,7 @@ const galleryImages = [
     { src: dateLocationImage, alt: "Wedding flat lay with ribbon and floral details" },
 ];
 
-function Home() {
+function Home({ showContact = true }) {
     const [activeGalleryImage, setActiveGalleryImage] = useState(1);
 
     const showPreviousGalleryImage = () => {
@@ -57,7 +58,7 @@ function Home() {
     };
 
     return (
-        <main className="home-page">
+        <main className="home-page" id="home-page-start">
             <section className="home-hero" aria-label="Wedding invitation">
                 <img
                     className="home-hero-image"
@@ -168,28 +169,7 @@ function Home() {
                 </div>
             </section>
 
-            <section className="home-contact-banner" id="home-contact" aria-labelledby="home-contact-title">
-                <img
-                    className="home-contact-banner-image"
-                    src={heroImage}
-                    alt="Outdoor wedding ceremony aisle with flowers"
-                />
-                <div className="home-contact-banner-copy">
-                    <p id="home-contact-title">Contact Us</p>
-                    <span>If you have any questions, please do not hesitate to contact us. We are happy to help with anything you need.</span>
-                    <div className="home-contact-links">
-                        <a href="mailto:richmondandcherrie@gmail.com">
-                            <strong>Email:</strong> richmondandcherrie@gmail.com
-                        </a>
-                        <a href="tel:+12405281136">
-                            <strong>Richmond:</strong> (240) 528-1136
-                        </a>
-                        <a href="tel:+14435273714">
-                            <strong>Cherrie:</strong> (443) 527-3714
-                        </a>
-                    </div>
-                </div>
-            </section>
+            {showContact && <Contact />}
         </main>
     )
 }

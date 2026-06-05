@@ -17,7 +17,7 @@ const registryLinks = [
 
 function Details() {
     return (
-        <main className="details-page">
+        <main className="details-page" id="details-page-start">
             <PageHero title="The Details" />
 
             <section className="details-dress-code" aria-labelledby="dress-code-title">
