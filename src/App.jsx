@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Details from "./pages/Details";
 import Home from "./pages/Home";
-import Registry from "./pages/Registry";
 import ThingsToDo from "./pages/ThingsToDo";
 import Navbar from "./components/Navbar";
 
@@ -10,7 +9,7 @@ const routes = {
   "/home/schedule": { page: Home, activePage: "schedule", sectionId: "home-schedule" },
   "/home/contact-us": { page: Home, activePage: "contact", sectionId: "home-contact" },
   "/details": { page: Details, activePage: "details" },
-  "/registry": { page: Registry, activePage: "registry" },
+  "/details/registry": { page: Details, activePage: "registry", sectionId: "details-registry" },
   "/things-to-do": { page: ThingsToDo, activePage: "thingsToDo" },
 };
 

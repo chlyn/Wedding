@@ -5,7 +5,7 @@ const navItems = [
     { id: "home", label: "Home", route: "/home" },
     { id: "schedule", label: "Schedule", route: "/home/schedule" },
     { id: "details", label: "Details", route: "/details" },
-    { id: "registry", label: "Registry", route: "/registry" },
+    { id: "registry", label: "Registry", route: "/details/registry" },
     { id: "thingsToDo", label: "Things To Do", route: "/things-to-do" },
     { id: "contact", label: "Contact Us", route: "/home/contact-us" },
 ];

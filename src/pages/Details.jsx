@@ -8,6 +8,13 @@ const dressCodeColors = [
     { name: "Mauve", value: "#A46A78" },
 ];
 
+const registryLinks = [
+    { name: "Zola", url: "https://www.zola.com/registry/richmondandcherrie" },
+    { name: "Amazon", url: "https://www.amazon.com/wedding/share/richmondandcherrie" },
+    { name: "Venmo", url: "https://venmo.com/ccespineda" },
+    { name: "Zelle", url: "https://richmondandcherrie.my.canva.site/registry" },
+];
+
 function Details() {
     return (
         <main className="details-page">
@@ -112,6 +119,32 @@ function Details() {
                                 Approximately 1 hour away and may be convenient for some guests traveling from afar.
                             </p>
                         </article>
+                    </div>
+                </div>
+            </section>
+
+            <section className="details-registry" id="details-registry" aria-labelledby="registry-title">
+                <div className="details-registry-frame">
+                    <p className="details-section-title" id="registry-title">
+                        Registry
+                    </p>
+
+                    <p className="details-registry-copy">
+                        For friends and family who wish to honor us with a gift, we have created a newlywed fund as we begin this new chapter together.
+                    </p>
+
+                    <div className="details-registry-links">
+                        {registryLinks.map((registry) => (
+                            <a
+                                className="details-registry-link"
+                                href={registry.url}
+                                key={registry.name}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                {registry.name}
+                            </a>
+                        ))}
                     </div>
                 </div>
             </section>
