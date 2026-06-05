@@ -99,6 +99,10 @@
   object-fit: cover;
 }
 
+.details-attire-image img.details-attire-image-secondary {
+  display: none;
+}
+
 /* --------------------------------------------------------------------------------------------------------- */
 /* TRAVEL INFORMATION */
 
@@ -370,22 +374,52 @@
 @media (max-width: 820px) {
   .details-dress-code {
     grid-template-columns: 1fr;
-    gap: 56px;
+    gap: 44px;
     padding-block: 104px;
   }
 
   .details-dress-info {
-    padding: 0;
+    display: contents;
   }
 
-  .details-attire-image {
-    width: min(78%, 400px);
+  .details-dress-info > :not(.details-color-palette) {
+    grid-column: 1 / -1;
+  }
+
+  .details-color-palette {
+    grid-column: 1;
+    grid-row: 4;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    align-self: center;
+    gap: clamp(7px, 2vw, 12px);
+    width: min(88%, 440px);
     margin: 0 auto;
   }
 
+  .details-attire-image {
+    grid-column: 1;
+    grid-row: 5;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(10px, 3vw, 20px);
+    width: min(100%, 520px);
+    margin: 0 auto;
+    align-self: center;
+  }
+
   .details-attire-image img {
+    display: block;
     min-height: auto;
     aspect-ratio: 4 / 5;
+  }
+
+  .details-attire-image img.details-attire-image-secondary {
+    display: block;
+  }
+
+  .details-dress-note {
+    grid-row: 6;
+    margin-top: 12px;
   }
 
   .details-travel-grid {

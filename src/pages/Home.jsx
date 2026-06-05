@@ -5,6 +5,7 @@ import galleryImage1 from "../assets/Gallery_1.png";
 import galleryImage2 from "../assets/Gallery_2.png";
 import galleryImage3 from "../assets/Gallery_3.png";
 import heroImage from "../assets/home-hero.png";
+import decorImage from "../assets/Decor.png";
 import ceremonyImage from "../assets/Ceremony.png";
 import cocktailImage from "../assets/Cocktail.png";
 import receptionImage from "../assets/Reception.png";
@@ -82,11 +83,25 @@ function Home({ showContact = true }) {
             </section>
 
             <section className="home-date-location" aria-label="Date and location">
-                <div className="home-date-image-wrap">
+                <div className="home-date-visual">
                     <img
-                        className="home-date-image"
-                        src={dateLocationImage}
-                        alt="Wedding invitation with burgundy ribbon and flowers"
+                        className="home-date-decor home-date-decor-top"
+                        src={decorImage}
+                        alt=""
+                        aria-hidden="true"
+                    />
+                    <div className="home-date-image-wrap">
+                        <img
+                            className="home-date-image"
+                            src={dateLocationImage}
+                            alt="Wedding invitation with burgundy ribbon and flowers"
+                        />
+                    </div>
+                    <img
+                        className="home-date-decor home-date-decor-bottom"
+                        src={decorImage}
+                        alt=""
+                        aria-hidden="true"
                     />
                 </div>
                 <div className="home-date-copy">
@@ -128,6 +143,12 @@ function Home({ showContact = true }) {
             </section>
 
             <section className="home-gallery" aria-label="Wedding gallery">
+                <img
+                    className="home-gallery-decor home-gallery-decor-top"
+                    src={decorImage}
+                    alt=""
+                    aria-hidden="true"
+                />
                 <div className="home-gallery-track">
                     {galleryImages.map((image, index) => (
                         <figure
@@ -137,7 +158,22 @@ function Home({ showContact = true }) {
                             <img src={image.src} alt={image.alt} />
                         </figure>
                     ))}
+                    {[1, 2, 3].map((decorNumber) => (
+                        <img
+                            className={`home-gallery-mobile-decor home-gallery-mobile-decor-${decorNumber}`}
+                            src={decorImage}
+                            alt=""
+                            aria-hidden="true"
+                            key={`gallery-mobile-decor-${decorNumber}`}
+                        />
+                    ))}
                 </div>
+                <img
+                    className="home-gallery-decor home-gallery-decor-bottom"
+                    src={decorImage}
+                    alt=""
+                    aria-hidden="true"
+                />
 
                 <div className="home-gallery-controls" aria-label="Gallery controls">
                     <button

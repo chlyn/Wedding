@@ -21,18 +21,14 @@ function FAQ({ showContact = false, onNavigate }) {
     const faqItems = [
         {
             question: "Can I bring a guest?",
-            answer: "Your invitation will indicate whether a guest has been included. Please RSVP only for the guests named on your invitation.",
-        },
-        {
-            question: "Are children invited?",
-            answer: "Please refer to the names listed on your invitation to see who has been included in your party.",
+            answer: "Due to limited seating, this invitation is extended only to the guest(s) namedon the invitation.",
         },
         {
             question: "When should I RSVP?",
-            answer: "Please submit your RSVP before August 4, 2026.",
+            answer: "Please submit your RSVP by July 5, 2026.",
         },
         {
-            question: "What should I wear?",
+            question: "What is the wedding attire?",
             answer: (
                 <>
                     We kindly request formal attire in shades of dusty rose, rose pink, mauve, or similar tones from our wedding palette. Please visit the <FAQLink route="/details" onNavigate={onNavigate}>Details</FAQLink> page for more information.
@@ -42,18 +38,6 @@ function FAQ({ showContact = false, onNavigate }) {
         {
             question: "What time should I arrive?",
             answer: "Please arrive by 12:30 PM. Guests will be seated by 12:45 PM.",
-        },
-        {
-            question: "Where will the ceremony and reception take place?",
-            answer: (
-                <>
-                    The ceremony will be held at St. Edward the Confessor Catholic Church. The cocktail hour and reception will follow at Celebrations Event & Rental Venue. Full addresses are available in the <FAQLink route="/home/schedule" onNavigate={onNavigate}>Schedule</FAQLink>.
-                </>
-            ),
-        },
-        {
-            question: "Is parking available?",
-            answer: "Parking is available at both the ceremony and reception locations. We recommend allowing a little extra time when arriving.",
         },
         {
             question: "Where can I find the registry?",

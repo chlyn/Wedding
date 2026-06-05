@@ -1,5 +1,6 @@
 import "../styles/pages/details.css";
-import attireImage from "../assets/Dress_Code_Image.png";
+import attireImage_1 from "../assets/Dress_Code_Image_1.png";
+import attireImage_2 from "../assets/Dress_Code_Image_2.png";
 import PageHero from "../components/PageHero";
 
 // Add, remove, or replace hex color codes here to update the dress-code palette.
@@ -57,7 +58,12 @@ function Details() {
                 </div>
 
                 <div className="details-attire-image" aria-label="Attire example">
-                    <img src={attireImage} alt="Formal attire inspiration" />
+                    <img src={attireImage_1} alt="Formal attire inspiration" />
+                    <img
+                        className="details-attire-image-secondary"
+                        src={attireImage_2}
+                        alt="Additional formal attire inspiration"
+                    />
                 </div>
             </section>
 
