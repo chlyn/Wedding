@@ -91,11 +91,15 @@ function Home() {
                     <p className="home-date-note">
                         We would be honored to have you with us as we celebrate the beginning of our marriage.    
                     </p>
-                    <button className="home-date-rsvp-button" type="button">RSVP</button>
+                    <div className="home-date-floral" aria-hidden="true">
+                        <span></span>
+                        <span className="home-date-floral-bloom"></span>
+                        <span></span>
+                    </div>
                 </div>
             </section>
 
-            <section className="home-schedule" aria-labelledby="home-schedule-title">
+            <section className="home-schedule" id="home-schedule" aria-labelledby="home-schedule-title">
                 <div className="home-schedule-frame">
                     <p className="home-section-kicker" id="home-schedule-title">The Day's Events</p>
                     <div className="home-schedule-list">
@@ -122,15 +126,6 @@ function Home() {
                         ))}
                     </div>
                 </div>
-            </section>
-
-            <section className="home-rsvp" aria-labelledby="home-rsvp-title">
-                <p className="home-rsvp-title" id="home-rsvp-title">RSVP</p>
-                <p className="home-rsvp-copy">
-                    Your love, prayers, and presence mean so much to us. We cannot wait to gather with the people we love most and celebrate the beginning of our forever.
-                </p>
-                <p className="home-rsvp-deadline">Please respond before August 4, 2026.</p>
-                <button type="button">Celebrate With Us</button>
             </section>
 
             <section className="home-gallery" aria-label="Wedding gallery">
@@ -173,16 +168,26 @@ function Home() {
                 </div>
             </section>
 
-            <section className="home-contact-banner" aria-label="Questions">
+            <section className="home-contact-banner" id="home-contact" aria-labelledby="home-contact-title">
                 <img
                     className="home-contact-banner-image"
                     src={heroImage}
                     alt="Outdoor wedding ceremony aisle with flowers"
                 />
                 <div className="home-contact-banner-copy">
-                    <p>Questions?</p>
-                    <span>Please do not hesitate to contact us. We are happy to help with anything you need.</span>
-                    <a href="tel:+13015550126">(301) 555-0126</a>
+                    <p id="home-contact-title">Contact Us</p>
+                    <span>If you have any questions, please do not hesitate to contact us. We are happy to help with anything you need.</span>
+                    <div className="home-contact-links">
+                        <a href="mailto:richmondandcherrie@gmail.com">
+                            <strong>Email:</strong> richmondandcherrie@gmail.com
+                        </a>
+                        <a href="tel:+12405281136">
+                            <strong>Richmond:</strong> (240) 528-1136
+                        </a>
+                        <a href="tel:+14435273714">
+                            <strong>Cherrie:</strong> (443) 527-3714
+                        </a>
+                    </div>
                 </div>
             </section>
         </main>

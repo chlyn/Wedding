@@ -74,7 +74,6 @@
 }
 
 .home-date-location,
-.home-rsvp,
 .home-gallery {
   width: min(100% - 32px, 1120px);
   margin: 0 auto;
@@ -134,25 +133,43 @@
   color: var(--text-default);
 }
 
-.home-date-rsvp-button {
-  margin-top: 28px;
-  min-width: 300px;
-  border: 1px solid var(--border-burgundy);
-  background: transparent;
+.home-date-floral {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: min(100%, 300px);
+  margin: 32px auto 0;
   color: var(--text-primary);
-  cursor: pointer;
-  font-family: Arial, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 300;
-  letter-spacing: 0.18em;
-  padding: 14px 24px;
-  text-transform: uppercase;
 }
 
-.home-date-rsvp-button:hover,
-.home-date-rsvp-button:focus-visible {
-  background: var(--background-primary);
-  color: var(--text-on-primary);
+.home-date-floral > span:not(.home-date-floral-bloom) {
+  width: 88px;
+  height: 1px;
+  background: var(--border-burgundy);
+}
+
+.home-date-floral-bloom {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  display: block;
+  border: 1px solid var(--border-burgundy);
+  border-radius: 50% 0 50% 0;
+  transform: rotate(45deg);
+}
+
+.home-date-floral-bloom::before,
+.home-date-floral-bloom::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid var(--border-gold);
+  border-radius: 50% 0 50% 0;
+}
+
+.home-date-floral-bloom::after {
+  transform: rotate(90deg);
 }
 
 .home-schedule {
@@ -161,6 +178,7 @@
   background: var(--background-primary);
   color: var(--text-on-primary);
   padding: clamp(64px, 9vw, 112px) clamp(16px, 4vw, 40px);
+  scroll-margin-top: 72px;
   text-align: center;
 }
 
@@ -342,62 +360,6 @@
   color: var(--text-primary);
 }
 
-.home-rsvp {
-  padding: clamp(96px, 12vw, 160px) 0;
-  text-align: center;
-}
-
-.home-rsvp-title {
-  margin: 0;
-  color: var(--text-primary);
-  font-family: "baskerville-display-pt", Georgia, serif;
-  font-size: clamp(5rem, 13vw, 10rem);
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  line-height: 1.05;
-  text-transform: uppercase;
-}
-
-.home-rsvp-copy {
-  max-width: 760px;
-  margin: 36px auto 0;
-  color: var(--text-default);
-  font-family: Arial, sans-serif;
-  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
-  line-height: 1.8;
-}
-
-.home-rsvp-deadline {
-  margin: 28px auto 0;
-  color: var(--text-primary);
-  font-family: "baskerville-display-pt", Georgia, serif;
-  font-size: clamp(1.25rem, 3vw, 2rem);
-  font-style: italic;
-  line-height: 1.35;
-}
-
-.home-rsvp button {
-  min-width: min(100%, 500px);
-  margin-top: 44px;
-  border: 1px solid var(--border-burgundy);
-  background: var(--background-primary);
-  color: var(--text-on-primary);
-  cursor: pointer;
-  font-family: Arial, sans-serif;
-  font-size: clamp(1.15rem, 2.4vw, 1.35rem);
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  padding: 26px 48px;
-  text-transform: uppercase;
-}
-
-.home-rsvp button:hover,
-.home-rsvp button:focus-visible {
-  background: transparent;
-  color: var(--text-primary);
-}
-
 .home-gallery {
   padding: 0 0 clamp(96px, 12vw, 160px) 0;
 }
@@ -438,6 +400,7 @@
   place-items: center;
   margin: 0;
   overflow: hidden;
+  scroll-margin-top: 72px;
   text-align: center;
 }
 
@@ -490,15 +453,32 @@
   line-height: 1.7;
 }
 
-.home-contact-banner-copy a {
-  display: inline-block;
-  margin-top: 22px;
+.home-contact-links {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  width: fit-content;
+  margin-top: 28px;
+  margin-inline: auto;
+}
+
+.home-contact-links a {
   color: var(--text-on-primary);
   font-family: Arial, sans-serif;
-  font-size: clamp(0.95rem, 2vw, 1.15rem);
-  letter-spacing: 0.14em;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 5px;
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  text-align: center;
+  text-decoration: none;
+}
+
+.home-contact-links a:hover,
+.home-contact-links a:focus-visible {
+  color: color-mix(in srgb, var(--text-on-primary) 72%, var(--border-gold));
+}
+
+.home-contact-links strong {
+  font-weight: 700;
 }
 
 @media (max-width: 768px) {
@@ -623,6 +603,17 @@
   .home-gallery-bars span.active {
     background: var(--border-white);
   }
+
+  .home-contact-links {
+    width: min(100%, 430px);
+    margin-inline: auto;
+  }
+
+  .home-contact-phones {
+    width: 100%;
+    flex-direction: column;
+    gap: 18px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -632,8 +623,7 @@
 
   .home-location,
   .home-schedule h2,
-  .home-schedule-info p,
-  .home-rsvp button {
+  .home-schedule-info p {
     letter-spacing: 0.12em;
   }
 

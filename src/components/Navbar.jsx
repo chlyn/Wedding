@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import "../styles/components/navbar.css";
 
 const navItems = [
-    { id: "home", label: "Home" },
-    { id: "details", label: "Details" },
-    { id: "registry", label: "Registry" },
-    { id: "thingsToDo", label: "Things To Do" },
+    { id: "home", label: "Home", route: "/home" },
+    { id: "schedule", label: "Schedule", route: "/home/schedule" },
+    { id: "details", label: "Details", route: "/details" },
+    { id: "registry", label: "Registry", route: "/registry" },
+    { id: "thingsToDo", label: "Things To Do", route: "/things-to-do" },
+    { id: "contact", label: "Contact Us", route: "/home/contact-us" },
 ];
 
-function Navbar({ activePage, onPageChange }) {
+function Navbar({ activePage, onNavigate }) {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -23,8 +25,8 @@ function Navbar({ activePage, onPageChange }) {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const handlePageChange = (pageId) => {
-        onPageChange(pageId);
+    const handlePageChange = (route) => {
+        onNavigate(route);
         setIsMenuOpen(false);
     };
 
@@ -37,7 +39,7 @@ function Navbar({ activePage, onPageChange }) {
                             key={item.id}
                             type="button"
                             className={`navbar-button${activePage === item.id ? " active" : ""}`}
-                            onClick={() => handlePageChange(item.id)}
+                            onClick={() => handlePageChange(item.route)}
                         >
                             {item.label}
                         </button>
@@ -74,7 +76,7 @@ function Navbar({ activePage, onPageChange }) {
                             key={`drawer-${item.id}`}
                             type="button"
                             className={`navbar-drawer-button${activePage === item.id ? " active" : ""}`}
-                            onClick={() => handlePageChange(item.id)}
+                            onClick={() => handlePageChange(item.route)}
                         >
                             {item.label}
                         </button>

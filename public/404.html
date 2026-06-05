@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Richmond and Cherrie</title>
+    <script>
+      const basePath = "/richmondandcherrie/";
+      const route = window.location.pathname.startsWith(basePath)
+        ? window.location.pathname.slice(basePath.length - 1)
+        : "/home";
+
+      window.location.replace(`${basePath}?route=${encodeURIComponent(route)}`);
+    </script>
+  </head>
+  <body></body>
+</html>
