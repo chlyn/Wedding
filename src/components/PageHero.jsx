@@ -19,7 +19,9 @@ function PageHero({
             <div className="page-hero-overlay">
                 <div className="page-hero-title">
                     {titleWords.map((word) => (
-                        <HeaderText text={word} key={word} />
+                        <span key={word}>
+                            <HeaderText text={word} />
+                        </span>
                     ))}
                 </div>
             </div>

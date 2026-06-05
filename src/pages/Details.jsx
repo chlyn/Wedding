@@ -1,11 +1,15 @@
 import "../styles/pages/details.css";
-import attireImage from "../assets/home-date-location.png";
+import attireImage from "../assets/Dress_Code_Image.png";
 import PageHero from "../components/PageHero";
 
+// Add, remove, or replace hex color codes here to update the dress-code palette.
 const dressCodeColors = [
-    { name: "Dusty Rose", value: "#BF9885" },
-    { name: "Rose Pink", value: "#D8A5A8" },
-    { name: "Mauve", value: "#A46A78" },
+    "#dc7882", "#d36373", "#de6377", "#e15a82", "#ee6a81", "#eb5986", "#ef6b8c", "#cd608a",
+    "#e57486", "#d85c76", "#e55c86", "#e6658c", "#f9708c", "#ef648f", "#e25e8d", "#c95e8a",
+    "#da657b", "#dd5875", "#ec5e86", "#e9709b", "#f76d8e", "#dc5484", "#e65d8b", "#c85f8a",
+    "#d86b81", "#e35c7a", "#ed5d81", "#e76c9b", "#f6648b", "#eb5787", "#ea5c8b", "#ca5782",
+    "#d5657e", "#e15979", "#e95f83", "#e66085", "#ef6386", "#e95d8b", "#e26090", "#c95e8c",
+    "#d45d71", "#e05977", "#e65984", "#e05781", "#e9597b", "#e8668a", "#dd5b8b", "#c15586",
 ];
 
 const registryLinks = [
@@ -33,14 +37,12 @@ function Details() {
                     </p>
 
                     <div className="details-color-palette" aria-label="Dress code color palette">
-                        {dressCodeColors.map((color) => (
-                            <div className="details-color-item" key={color.name}>
-                                <span
-                                    className="details-color-swatch"
-                                    style={{ backgroundColor: color.value }}
-                                ></span>
-                                <span>{color.name}</span>
-                            </div>
+                        {dressCodeColors.map((color, index) => (
+                            <span
+                                className="details-color-swatch"
+                                key={`${color}-${index}`}
+                                style={{ backgroundColor: color }}
+                            ></span>
                         ))}
                     </div>
 

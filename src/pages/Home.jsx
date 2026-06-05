@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "../styles/pages/home.css";
-import dateLocationImage from "../assets/home-date-location.png";
+import dateLocationImage from "../assets/Main_Image.png";
+import galleryImage1 from "../assets/Gallery_1.png";
+import galleryImage2 from "../assets/Gallery_2.png";
+import galleryImage3 from "../assets/Gallery_3.png";
 import heroImage from "../assets/home-hero.png";
 import ceremonyImage from "../assets/Ceremony.png";
 import cocktailImage from "../assets/Cocktail.png";
@@ -37,9 +40,9 @@ const scheduleItems = [
 ];
 
 const galleryImages = [
-    { src: dateLocationImage, alt: "Wedding detail with burgundy ribbon and flowers" },
-    { src: dateLocationImage, alt: "Wedding invitation detail with flowers" },
-    { src: dateLocationImage, alt: "Wedding flat lay with ribbon and floral details" },
+    { src: galleryImage1, alt: "Wedding detail with burgundy ribbon and flowers" },
+    { src: galleryImage2, alt: "Wedding invitation detail with flowers" },
+    { src: galleryImage3, alt: "Wedding flat lay with ribbon and floral details" },
 ];
 
 function Home({ showContact = true }) {
@@ -92,11 +95,6 @@ function Home({ showContact = true }) {
                     <p className="home-date-note">
                         We would be honored to have you with us as we celebrate the beginning of our marriage.    
                     </p>
-                    <div className="home-date-floral" aria-hidden="true">
-                        <span></span>
-                        <span className="home-date-floral-bloom"></span>
-                        <span></span>
-                    </div>
                 </div>
             </section>
 

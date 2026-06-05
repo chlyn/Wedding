@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Details from "./pages/Details";
+import FAQ from "./pages/FAQ";
 import Home from "./pages/Home";
 import ThingsToDo from "./pages/ThingsToDo";
 import Navbar from "./components/Navbar";
@@ -11,6 +12,7 @@ const routes = {
   "/details": { page: Details, activePage: "details", sectionId: "details-page-start" },
   "/details/registry": { page: Details, activePage: "registry", sectionId: "details-registry", smoothScroll: true },
   "/things-to-do": { page: ThingsToDo, activePage: "thingsToDo", sectionId: "things-to-do-page" },
+  "/faq": { page: FAQ, activePage: "faq", sectionId: "faq-page-start" },
 };
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -82,10 +84,11 @@ function App() {
           <div className="mobile-page-flow">
             <Home showContact={false} />
             <Details />
-            <ThingsToDo showContact />
+            <ThingsToDo />
+            <FAQ showContact onNavigate={navigate} />
           </div>
         ) : (
-          <ActivePage />
+          <ActivePage onNavigate={navigate} />
         )}
       </div>
     </div>

@@ -152,6 +152,10 @@
 }
 
 @media (max-width: 768px) {
+  .thingstodo-guide {
+    padding-block: 112px;
+  }
+
   .thingstodo-destinations {
     width: min(100%, 620px);
     margin-inline: auto;

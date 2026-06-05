@@ -58,32 +58,20 @@
 }
 
 .details-color-palette {
-  display: flex;
-  justify-content: center;
-  gap: clamp(22px, 5vw, 48px);
-  margin: 46px 0 0;
-  flex-wrap: wrap;
-}
-
-.details-color-item {
   display: grid;
-  justify-items: center;
-  gap: 14px;
-  color: var(--text-default);
-  font-family: Arial, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 300;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: clamp(8px, 1.5vw, 14px);
+  width: min(100%, 520px);
+  margin: 46px 0 0;
+  margin-inline: auto;
 }
 
 .details-color-swatch {
-  width: clamp(70px, 10vw, 96px);
+  width: 100%;
   aspect-ratio: 1;
   display: block;
-  border: 1px solid var(--border-gold);
   border-radius: 50%;
-  box-shadow: 0 10px 24px rgba(45, 41, 38, 0.12);
+  box-shadow: 0 5px 12px rgba(45, 41, 38, 0.1);
 }
 
 .details-dress-note {
@@ -238,15 +226,40 @@
 /* REGISTRY */
 
 .details-registry {
+  position: relative;
+  isolation: isolate;
   width: 100%;
+  overflow: hidden;
   padding: clamp(72px, 10vw, 128px) clamp(16px, 4vw, 40px);
   scroll-margin-top: 72px;
 }
 
+.details-registry::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("../../assets/Floral Background.png") center / cover no-repeat;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
 .details-registry-frame {
+  --frame-corner: clamp(44px, 7vw, 72px);
   position: relative;
   width: min(100%, 1040px);
   margin: 0 auto;
+  background: var(--background-default);
+  clip-path: polygon(
+    var(--frame-corner) 0,
+    calc(100% - var(--frame-corner)) 0,
+    100% var(--frame-corner),
+    100% calc(100% - var(--frame-corner)),
+    calc(100% - var(--frame-corner)) 100%,
+    var(--frame-corner) 100%,
+    0 calc(100% - var(--frame-corner)),
+    0 var(--frame-corner)
+  );
   padding: clamp(64px, 9vw, 104px) clamp(28px, 7vw, 96px);
   text-align: center;
 }
@@ -256,7 +269,6 @@
   content: "";
   position: absolute;
   pointer-events: none;
-  --frame-corner: clamp(44px, 7vw, 72px);
   --frame-line: 2px;
   background:
     linear-gradient(var(--border-burgundy), var(--border-burgundy))
@@ -359,6 +371,7 @@
   .details-dress-code {
     grid-template-columns: 1fr;
     gap: 56px;
+    padding-block: 104px;
   }
 
   .details-dress-info {
@@ -366,7 +379,7 @@
   }
 
   .details-attire-image {
-    max-width: 520px;
+    width: min(78%, 400px);
     margin: 0 auto;
   }
 
@@ -382,6 +395,10 @@
     gap: 58px;
   }
 
+  .details-travel {
+    padding-block: 112px;
+  }
+
   .details-travel-card {
     padding: 56px 26px 38px;
   }
@@ -393,6 +410,10 @@
 
   .details-registry-frame {
     padding: 64px 26px;
+  }
+
+  .details-registry {
+    padding-block: 112px;
   }
 }
 

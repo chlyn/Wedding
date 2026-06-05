@@ -1,11 +1,14 @@
 import "../styles/pages/thingstodo.css";
 import PageHero from "../components/PageHero";
 import Contact from "../components/Contact";
-import heroImage from "../assets/home-hero.png";
+import washingtonImage from "../assets/Place_1.jpg";
+import annapolisImage from "../assets/Place_2.jpg";
+import virginiaImage from "../assets/Place_3.jpg";
 
 const destinations = [
     {
         name: "Washington, D.C.",
+        image: washingtonImage,
         description: "Our nation's capital is filled with world-class museums, historic landmarks, and vibrant neighborhoods waiting to be discovered.",
         highlights: [
             "The National Mall & Monuments",
@@ -16,6 +19,7 @@ const destinations = [
     },
     {
         name: "Annapolis",
+        image: annapolisImage,
         description: "This charming waterfront city offers the perfect blend of history, culture, and scenic views.",
         highlights: [
             "City Dock",
@@ -27,6 +31,7 @@ const destinations = [
     },
     {
         name: "Northern Virginia",
+        image: virginiaImage,
         description: "Northern Virginia offers a wonderful mix of history, outdoor adventures, and unique cultural experiences.",
         highlights: [
             "Old Town Alexandria",
@@ -59,7 +64,7 @@ function ThingsToDo({ showContact = false }) {
                         >
                             <img
                                 className="thingstodo-destination-image"
-                                src={heroImage}
+                                src={destination.image}
                                 alt={`${destination.name} destination placeholder`}
                             />
 
