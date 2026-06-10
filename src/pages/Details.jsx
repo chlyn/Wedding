@@ -75,7 +75,7 @@ function Details() {
 
                     <div className="details-travel-intro">
                         <p>
-                            For friends and family traveling from afar, here is helpful flight information for planning your trip to Bowie, Maryland.
+                            For friends and family traveling from afar, here are some helpful airport options for planning your trip to Bowie, Maryland.
                         </p>
                     </div>
 

@@ -21,7 +21,7 @@ function FAQ({ showContact = false, onNavigate }) {
     const faqItems = [
         {
             question: "Can I bring a guest?",
-            answer: "Due to limited seating, this invitation is extended only to the guest(s) named on the invitation.",
+            answer: "We would love to celebrate with everyone, but due to limited seating, guest accomodations have been extended only to those whose invitations specifically include a guest option.",
         },
         {
             question: "When should I RSVP?",
